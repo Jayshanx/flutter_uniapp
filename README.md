@@ -30,4 +30,4 @@ ios端集成需要参考官方文档
 
 # 效果预览
 
-![](.\screenshot\preview.gif)
+![](screenshot/preview.gif)
