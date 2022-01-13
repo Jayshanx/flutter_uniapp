@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^4.0.5-beta1                        # http 网络请求 dio
+  path_provider: ^2.0.8                    # 路径
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,8 +41,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  dio: ^4.0.5-beta1                        # http 网络请求 dio
-  path_provider: ^2.0.8                    # 路径
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
