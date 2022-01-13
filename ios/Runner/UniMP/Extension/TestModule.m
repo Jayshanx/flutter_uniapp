@@ -1,8 +1,8 @@
 //
-//  TongfunUniModule.m
-//  TongfunUniModule 小程序调用原生方法模块
+//  TestModule.m
+//  TestModule 小程序调用原生方法模块
 //
-//  Created by xiaozx on 2021/6/18.
+//  Created by jayshanx on 2022/1/12.
 //
 //
 
