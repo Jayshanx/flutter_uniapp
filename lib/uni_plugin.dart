@@ -137,7 +137,7 @@ class UniPlugin {
 
   //获取小程序运行地址 android only
   Future<String?> getAppBasePath() async {
-    if(Platform.isAndroid){
+    if (Platform.isAndroid) {
       return await _channel.invokeMethod("getAppBasePath");
     }
     return null;
@@ -149,10 +149,10 @@ class UniPlugin {
 
     //获取小程序的运行目录
     String? runningPath;
-    if(Platform.isAndroid) {
+    if (Platform.isAndroid) {
       runningPath = await getAppBasePath();
     } else {
-      runningPath =  (await getLibraryDirectory()).path + "/Pandora/apps/";
+      runningPath = (await getLibraryDirectory()).path + "/Pandora/apps/";
     }
 
     if (runningPath == null) {
@@ -194,28 +194,28 @@ class UniPlugin {
       barrierDismissible: true,
       builder: (BuildContext context) {
         return Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: 40,
-                  width: 40,
-                  child: Center(
-                    child: Theme(
-                      data: ThemeData(cupertinoOverrideTheme: const CupertinoThemeData(brightness: Brightness.dark)),
-                      child: const CupertinoActivityIndicator(),
-                    ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 40,
+                width: 40,
+                child: Center(
+                  child: Theme(
+                    data: ThemeData(cupertinoOverrideTheme: const CupertinoThemeData(brightness: Brightness.dark)),
+                    child: const CupertinoActivityIndicator(),
                   ),
                 ),
-                const Text(
-                  "下载中...",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                  ),
-                )
-              ],
-            ),
+              ),
+              const Text(
+                "下载中...",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                ),
+              )
+            ],
+          ),
         );
       },
     );

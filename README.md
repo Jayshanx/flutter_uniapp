@@ -24,3 +24,10 @@ ios端集成需要参考官方文档
 1. 修改 main.dart 中的 appId
 2. 修改 uni_plugin.dart 中的 _downloadUrl 为自己的远程 wgt 地址
 
+
+
+
+
+# 效果预览
+
+![](.\screenshot\preview.gif)
