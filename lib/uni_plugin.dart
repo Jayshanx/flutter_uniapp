@@ -54,6 +54,8 @@ class UniPlugin {
       //下载后解压
       var releaseSuccess = await releaseUniMP(appId: appId);
       if (!releaseSuccess) {
+        _showInSnackBar("解压失败");
+        navigatorKey.currentState!.pop();
         //解压失败
         return false;
       }
