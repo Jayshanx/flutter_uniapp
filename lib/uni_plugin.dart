@@ -44,7 +44,10 @@ class UniPlugin {
       _showLoadingDialog();
 
       // 下载远程wgt包
-      var downloadSuccess = await _downLoadWgt(appId);
+      var downloadSuccess = await _downLoadWgt(appId, progressCallback: (received, total) {
+        debugPrint("received: $received,total: $total");
+      });
+
       if (!downloadSuccess) {
         _showInSnackBar("下载失败");
         navigatorKey.currentState!.pop();
@@ -72,14 +75,6 @@ class UniPlugin {
 
   ///下载并解压到运行目录
   Future<bool> releaseUniMP({required String appId}) async {
-    var success = await _downLoadWgt(appId, progressCallback: (received, total) {
-      debugPrint("received: $received,total: $total");
-    });
-
-    if (!success) {
-      return false;
-    }
-
     var releaseSuccess = await _channel.invokeMethod<bool?>("releaseUniMP", {"appId": appId});
     return releaseSuccess ?? false;
   }
